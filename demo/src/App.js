@@ -4,8 +4,9 @@ import './App.css';
 import { Button } from 'reactstrap';
 import { ToastContainer, toast } from "react-toastify";
 import Home from './components/home';
-import Course from './components/course';
-import AllCourse from './components/AllCourses';
+import Course from './components/student';
+import AllCourse from './components/AllStudent';
+import AddCourse from './components/AddStudent';
 
 function App() {
 
@@ -16,13 +17,7 @@ function App() {
   };
   return (
     <div>
-      <ToastContainer />
-      <Button color='primary' outline onClick={btnHandle}>React Button</Button>
-
-
-      <Home />
-
-      <AllCourse />
+      
     </div>
   );
 }

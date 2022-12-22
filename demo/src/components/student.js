@@ -4,13 +4,13 @@ import {
 } from "reactstrap";
 
 
-const Course = ({ course }) => {
+const Student = ({ student }) => {
 
     return (
         <Card className="text-center">
             <CardBody>
-                <CardSubtitle className="font-weight-bold">{course.title}</CardSubtitle>
-                <CardText>{course.description}</CardText>
+                <CardSubtitle className="font-weight-bold">{student.title}</CardSubtitle>
+                <CardText>{student.description}</CardText>
                 <Container className="text-center">
                     <Button color="warning">Update</Button>
                     <Button color="danger">Delete</Button>
@@ -21,4 +21,4 @@ const Course = ({ course }) => {
 }
 
 
-export default Course;
+export default Student;
