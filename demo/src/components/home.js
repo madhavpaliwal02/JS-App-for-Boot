@@ -1,13 +1,12 @@
 import React from 'react';
-import { Jumbotron } from "reactstrap";
+import { Container, Button } from 'reactstrap'; 
 
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
-            <Jumbotron>
-                <p>This is home page of react, and we are using Jumbotron for learning.</p>
-            </Jumbotron>
+            <Container>This is our Container</Container>
+            <Button color='primary'>Home Button</Button>
         </div>
     )
 };
