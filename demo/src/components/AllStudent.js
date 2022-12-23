@@ -17,13 +17,13 @@ const AllStudent = () => {
             (response) => {
                 // For success
                 // console.log(response.data);
-                toast.success("students have been loaded", {position: "bottom-center"});
+                toast.success("students have been loaded", { position: "bottom-center" });
                 setStudents(response.data);
             },
             (error) => {
                 // For error
                 console.log(error);
-                toast.error("something went wrong", {position: "bottom-center"});
+                toast.error("something went wrong", { position: "bottom-center" });
             }
         );
     };
@@ -33,9 +33,17 @@ const AllStudent = () => {
         getAllCoursesFromServer();
     }, []);
 
-    const [Students, setStudents] = useState([
+
+    // Manually adding fake data
+    const [students, setStudents] = useState([
         // { name: "Madhav", course: "Java" }, { name: "Palak", course: "React" }
     ])
+
+    // Delete Update function
+    const updateStudents = (id) => {
+        setStudents(students.filter((s) => s.id != id));
+    };
+
 
     return (
 
@@ -45,9 +53,9 @@ const AllStudent = () => {
             <p>List of Students are below:</p>
 
             {
-                Students.length > 0 ?
-                    Students.map((item) =>
-                        <Student key={item.id} student={item} />)
+                students.length > 0 ?
+                    students.map((item) =>
+                        <Student key={item.id} student={item} update={updateStudents} />)
                     : "No Students"
             }
         </div>
