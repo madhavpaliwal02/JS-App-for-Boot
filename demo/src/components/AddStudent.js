@@ -1,11 +1,15 @@
-import React, { Fragment } from "react";
-import {Form, FormGroup, Label, Input, Container, Button} from "reactstrap";
+import React, { Fragment, useEffect } from "react";
+import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
 
 const AddStudent = () => {
 
-    return <Fragment>
-        <h1 className="text-center">Add Student Form</h1>        
-        <Form>
+    useEffect(() => {
+        document.title = "Add Student";
+    }, []);
+
+    return <Fragment >
+        <h1 className="text-center">Add Student Form</h1>
+        <Form className="col-md-6 m-auto">
             <FormGroup>
                 <Label for="id">
                     Id

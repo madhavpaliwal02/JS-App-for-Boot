@@ -9,11 +9,11 @@ const Student = ({ student }) => {
     return (
         <Card className="text-center">
             <CardBody>
-                <CardSubtitle className="font-weight-bold">{student.title}</CardSubtitle>
-                <CardText>{student.description}</CardText>
+                <CardSubtitle className="font-weight-bold">{student.name}</CardSubtitle>
+                <CardText>{student.course}</CardText>
                 <Container className="text-center">
-                    <Button color="warning">Update</Button>
-                    <Button color="danger">Delete</Button>
+                    <Button color="warning mx-2" size="sm">Update</Button>
+                    <Button color="danger mx-2"size="sm">Delete</Button>
                 </Container>
             </CardBody>
         </Card>
