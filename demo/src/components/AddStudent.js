@@ -4,6 +4,7 @@ import axios from 'axios';
 import base_url from "../api/boot_api";
 import { toast } from "react-toastify";
 
+// This is our Add Student component
 const AddStudent = () => {
 
     // Func to display title
@@ -16,7 +17,7 @@ const AddStudent = () => {
 
     });
 
-    // Handle Form function
+    // Handle Form function : From --> Server
     const handleForm = (e) => {
         console.log("Data added", student);
         postDataToServer(student);
@@ -37,10 +38,12 @@ const AddStudent = () => {
         );
     };
 
-    // Return function vendor
+    // This is our Add Student component
     return <Fragment >
         <h1 className="text-center mt-3">Add Student Form</h1>
+        {/* Form submittin on handleForm method that post data on server */}
         <Form onSubmit={handleForm} className="col-md-6 m-auto">
+            {/* Input Form : Student */}
             <FormGroup>
                 <Label for="id">
                     Id
@@ -98,6 +101,7 @@ const AddStudent = () => {
                 />
             </FormGroup>
 
+            {/* Buttons to handle form */}
             <Container className="text-center">
                 <Button type="submit" color="success mx-2">Add Student</Button>
                 <Button type="reset" color="warning mx-2">Clear Form</Button>

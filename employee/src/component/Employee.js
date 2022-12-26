@@ -8,6 +8,8 @@ import UpdateEmployee from "./UpdateEmp";
 
 // This is our entity component of our application
 const Employee = ({ employee, updateD }) => {
+    const [emp ,setEmp] = useState([]);
+
 
     // This code is for delete : onclick
     const deleteEmployee = (id) => {
@@ -25,16 +27,17 @@ const Employee = ({ employee, updateD }) => {
         );
     };
 
-
-    // This code is for update : onclick
+        // This code is for update : onclick
     const updateEmployee = (id) => {
         // axios library provides update function, with following url
         axios.get(`${base_url}/employees/${id}`).then(
             // When true
             (response) => {
                 // toast.success("Updated Successfully", { position: "bottom-center" });
+
                 console.log("hello", response.data);
-                setEmp(response.data);
+                setEmp([response.data]);
+                
             },
             // When false
             (error) => {
@@ -42,14 +45,11 @@ const Employee = ({ employee, updateD }) => {
             }
         )
         return (
-            <UpdateEmployee item={"props"} />
+            <UpdateEmployee item={emp} />
         )
     }
-
     // Setting data
-    const [emp, setEmp] = useState([]);
-
-    console.log("emp2", emp);
+   
 
     // This is our return func of entity component
     return (

@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardBody } from "reactstrap";
 
 function Header ({name, title}) {
+    
+// This is our Header Section
 return(
     <div>
         <Card className="my-2">

@@ -1,16 +1,16 @@
 import React from "react";
 import { ListGroup } from "reactstrap";
-import {Link} from "react-router-dom"; 
+import {Link} from "react-router-dom";
 
+// This is left side : Menu component
 const Menu = () => {
 
     return (
         <div>
             <ListGroup>
                 <Link
-                    className="list-group-item list-group-item-action"
-                    active
-                    to="/"
+                    className="list-group-item list-group-item-action active"
+                    to="/"  // It defines the url to be fired with below text
                     tag="a"
                 >
                     Home

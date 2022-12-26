@@ -6,10 +6,8 @@ import { toast } from "react-toastify";
 
 
 const UpdateEmployee = (props) => {
-
-    console.log(props.item);
-
-
+    console.log(props.item)
+    
     return <Fragment>
         <h1 className="text-center mt-3">Update Employee Form</h1>
 

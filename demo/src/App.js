@@ -13,28 +13,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const btnHandle = () => {
-    toast("this is my first message");
-    toast.success("success", { position: 'top-center' });
-    toast.error("error", { position: 'top-left' });
-  };
+  // This is our React Page of the application
   return (
     <div>
       <Router>
         <ToastContainer />
         <Container>
+          {/* Header portion */}
           <Header />
           <Row>
             <Col md={4}>
-              {/* <h2 className='text-center'>This is Menu Side</h2> */}
+              {/* Left Column : MENU */}
               <Menu />
             </Col>
             <Col md={8}>
-              {/* <h2 className='text-center'>This is Container window</h2> */}
-              {/* <AllStudent /> */}
+              {/* Right Column : DISPLAY */}
               <Routes>
+                {/* This is for Home menu */}
                 <Route path="/" element={<Home />} exact />
+                {/* This is for Add Student menu */}
                 <Route path="/add-student" element={<AddStudent />} exact />
+                {/* This is for view Students menu */}
                 <Route path="/view-students" element={<AllStudent />} exact />
               </Routes>
 

@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
 import { Container, Button } from 'reactstrap';
 
-
+// This is our Home Page Component
 const Home = (props) => {
 
+    // It defines the title of the home page
     useEffect(() => {
         document.title = "Home Page";
     }, []);
 
-
+    // This is our component code
     return (
         <div className="p-5 mb-4 bg-light rounded-3">
             <Container className="container-fluid ">
