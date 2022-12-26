@@ -13,15 +13,21 @@ class ViewEmp extends Component {
         this.state = {
             employees: []
         }
+        this.addEmployee = this.addEmployee.bind(this);
     }
 
     // Method to call the api
-    componentDidMount(){
+    componentDidMount() {
         EmpService.getEmployees().then(
-            (response)=>{
-                this.setState({employees: response.data});
+            (response) => {
+                this.setState({ employees: response.data });
             }
         )
+    }
+
+    // Function will run when we wants add a employee : Add employee onclick
+    addEmployee(){
+        this.props.history.push('/add-emp');
     }
 
     // Render method that returns to the App.js
@@ -30,6 +36,12 @@ class ViewEmp extends Component {
             <div>
                 <h2 className='text-center'>Employees List</h2>
 
+                {/* Add Employee Button */}
+                <div className='row'>
+                    <button className='btn btn-primary' onClick={this.addEmployee}>
+                        Add Employee
+                    </button>
+                </div>
                 <div className='row'>
                     <table className='table table-striped table-bordered'>
 
